@@ -50,7 +50,7 @@ export default function App() {
       },
     ],[]);
 
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState(options[0]);
 
   return (
     <Select
