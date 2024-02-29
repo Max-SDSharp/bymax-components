@@ -26,7 +26,6 @@ yarn add bymax-react-select
 ##### JavaScript Example
 
 ###### App.js
-
 ```jsx
 import React, { useMemo, useState } from "react";
 import { Select } from "bymax-react-select";
@@ -61,6 +60,55 @@ export default function App() {
       id="example-id"
       value={value}
       isMulti={false}
+      isClearable={true}
+      options={options}
+      placeholder="Select a coin"
+      noOptionsMessage="No coins found"
+      onChange={(selectedOption) =>
+        setValue(selectedOption)
+      }
+    />
+  );
+}
+```
+
+##### TypeScript Example
+
+###### App.tsx
+```tsx
+import React, { useMemo, useState } from "react";
+import { Select, Option } from "bymax-react-select";
+
+export default function App() {
+  const options: Option[] = useMemo(() => [
+    {
+      id: "1", // acts as primary key, should be unique and non-empty
+      value: "BTC",
+      label: "Bitcoin",
+      image: "path to your images/image.svg",
+      base: "BTC",
+      quote: "USDT",
+    },
+    {
+      id: "2",
+      value: "eth",
+      label: "Ethereum",
+      base: "ETH",
+    },
+    {
+      id: "3",
+      value: "sol",
+      label: "Solana",
+    },
+  ], []);
+
+  const [value, setValue] = useState<Option | Option[] | null>(options[0]);
+
+  return (
+    <Select
+      id="example-id"
+      value={value}
+      isMulti={true}
       isClearable={true}
       options={options}
       placeholder="Select a coin"
