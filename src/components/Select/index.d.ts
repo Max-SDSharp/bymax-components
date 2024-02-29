@@ -10,7 +10,7 @@ declare module "bymax-react-select" {
 
   interface SelectProps {
     id: string;
-    value: Option | Option[];
+    value: Option | Option[] | null;
     isMulti: boolean;
     isInvalid?: boolean;
     isLocked?: boolean;
@@ -18,13 +18,13 @@ declare module "bymax-react-select" {
     isClearable?: boolean;
     options: Option[];
     placeholder?: string;
-    noOptionsMessage: () => string;
-    onChange: (value: Option | Option[] | null) => void;
+    noOptionsMessage: string;
+    onChange: (id: string, value: Option | Option[] | null) => void;
     onFormikChange?: (id: string, value: Option | Option[] | null) => void;
-    onFormikBlur?: (id: string, value: Option | Option[] | null) => void;
+    onFormikBlur?: (id: string, touched?: boolean, shouldValidate?: boolean) => void;
   }
 
   const Select: React.FC<SelectProps>;
 
-  export { Select, Option, SelectProps };
+  export { Select, type Option, type SelectProps };
 }
