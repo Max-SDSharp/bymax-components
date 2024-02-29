@@ -3,6 +3,11 @@
 Is a component created using the [react-select](https://react-select.com) component, a flexible and beautiful select input control for ReactJS
 with multiselect, singleselect and search system.
 
+Customized to facilitate its use, it has an animation feature with its placeholder text which can be used as the title of the component and properties that help
+in integration with the [formik](https://formik.org/) forms component.
+
+The <b>bymax React Select</b> component was designed for use in forms that work with cryptocurrencies, but it was also developed to work with any type of data.
+
 ![npm](https://img.shields.io/npm/v/bymax-react-select) ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
 [![NPM](https://nodei.co/npm/bymax-react-select.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/bymax-react-select/)
