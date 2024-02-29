@@ -8,7 +8,7 @@ with multiselect, singleselect and search system.
 ### Installation
 
 ```bash
-npm i @bymax/select --save
+npm i bymax-react-select --save
 ```
 
 ### Usage
@@ -19,7 +19,7 @@ npm i @bymax/select --save
 
 ```jsx
 import React, { useMemo, useState } from "react";
-import { Select } from "@bymax/select";
+import { Select } from "bymax-react-select";
 
 export default function App() {
   const options = useMemo(() => [
