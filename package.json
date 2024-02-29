@@ -1,13 +1,29 @@
 {
-  "name": "@bymax/select",
+  "name": "bymax-select",
   "version": "1.0.0",
   "description": "A flexible and beautiful selection component for ReactJS, featuring support for multi-select, single-select, and search.",
   "author": "Maximiliano Salvatti",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msalvatti/bymax-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msalvatti/bymax-components/issues"
+  },
+  "homepage": "https://msalvatti.github.io/bymax-components/",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "keywords": [
+    "bymax",
+    "react-select",
+    "select",
+    "react",
+    "react-component",
+    "form"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
