@@ -1,4 +1,4 @@
-declare module "@bymax/select" {
+declare module "bymax-react-select" {
     interface Option {
       id: string;
       value: string;
