@@ -19,7 +19,7 @@ declare module "bymax-react-select" {
     options: Option[];
     placeholder?: string;
     noOptionsMessage: string;
-    onChange: (id: string, value: Option | Option[] | null) => void;
+    onChange: (value: Option | Option[] | null) => void;
     onFormikChange?: (id: string, value: Option | Option[] | null) => void;
     onFormikBlur?: (id: string, touched?: boolean, shouldValidate?: boolean) => void;
   }
