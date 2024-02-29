@@ -3,6 +3,12 @@
 Is a component created using the [react-select](https://react-select.com) component, a flexible and beautiful select input control for ReactJS
 with multiselect, singleselect and search system.
 
+![npm](https://img.shields.io/npm/v/bymax-react-select) ![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+
+[![NPM](https://nodei.co/npm/bymax-react-select.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/bymax-react-select/)
+
+[![storybook](https://img.shields.io/badge/tutorial-storybook-purple)](https://bymax-components.vercel.app/)
+
 ## Getting Started
 
 ### Installation
@@ -27,7 +33,7 @@ export default function App() {
         id: 1, // acts as primary key, should be unique and non-empty
         value: "BTC",
         label: "Bitcoin",
-        image: btc,
+        image: "path to your images/image.svg",
         base: "BTC",
         quote: "USDT",
       },
@@ -35,14 +41,12 @@ export default function App() {
         id: 2,
         value: "eth",
         label: "Ethereum",
-        image: eth,
         base: "ETH",
       },
       {
         id: 3,
         value: "sol",
         label: "Solana",
-        image: sol,
       },
     ],[]);
 

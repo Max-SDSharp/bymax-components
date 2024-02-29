@@ -4,7 +4,7 @@ import eth from "./coins/eth.svg";
 import sol from "./coins/sol.svg";
 
 export default {
-  title: "@bymax/select",
+  title: "bymax-react-select",
   component: Select,
   parameters: {
     layout: "centered",
