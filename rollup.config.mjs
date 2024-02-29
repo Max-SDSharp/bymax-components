@@ -4,14 +4,17 @@ import commonjs from "@rollup/plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import terser from "@rollup/plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import typescript from '@rollup/plugin-typescript';
+import { dts } from 'rollup-plugin-dts';
 
 import { createRequire } from "node:module";
 const requireFile = createRequire(import.meta.url);
 const packageJson = requireFile("./package.json");
+const indexFile = "./src/index.js";
 
 export default [
   {
-    input: "./src/index.js",
+    input: indexFile,
     output: [
       {
         file: packageJson.main,
@@ -22,12 +25,7 @@ export default [
         file: packageJson.module,
         format: "esm",
         sourcemap: true,
-      },
-      {
-        file: packageJson.types,
-        format: "esm",
-        sourcemap: true,
-      },
+      }
     ],
     plugins: [
       postcss({
@@ -42,8 +40,14 @@ export default [
       external(),
       resolve(),
       commonjs(),
+      typescript(),
       terser(),
     ],
     external: ["react", "react-dom", "react-select"],
+  },
+  {
+    input: indexFile,
+    output: [{ file: packageJson.types, format: 'es' }],
+    plugins: [dts()],
   },
 ];

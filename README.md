@@ -1,4 +1,4 @@
-# bymax Select component
+# bymax React Select component
 
 Is a component created using the [react-select](https://react-select.com) component, a flexible and beautiful select input control for ReactJS
 with multiselect, singleselect and search system.
@@ -15,6 +15,10 @@ with multiselect, singleselect and search system.
 
 ```bash
 npm i bymax-react-select --save
+```
+or
+```bash
+yarn add bymax-react-select
 ```
 
 ### Usage

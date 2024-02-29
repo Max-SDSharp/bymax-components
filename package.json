@@ -14,7 +14,7 @@
   },
   "homepage": "https://bymax-components.vercel.app/",
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "bymax",
@@ -57,6 +57,8 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "react-select": "^5.8.0"
+    "@rollup/plugin-typescript": "^11.1.6",
+    "react-select": "^5.8.0",
+    "rollup-plugin-dts": "^6.1.0"
   }
 }
