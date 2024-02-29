@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+import * as SelectStories from "./Select.stories";
+
+<Meta of={SelectStories} />
+
+# Select
+
+<b>@bymax/select</b> is a component created using the [react-select](https://react-select.com) component, a flexible and beautiful select input control for ReactJS
+with multiselect, singleselect and search system.
+
+Customized to facilitate its use, it has an animation feature with its placeholder text which can be used as the title of the component and properties that help
+in integration with the [formik](https://formik.org/) forms component.
+
+The <b>@bymax/select</b> component was designed for use in forms that work with cryptocurrencies, but it was also developed to work with any type of data.
+
+## Parameters
+
+- **id**: Identifier
+- **value**: Current value, must be an object as follows: ```{ id: '', value: '', label: '', image: '', base: '', quote: '' }```
+- **isMulti**: Allows you to choose several options (true: Multi Selection | false: Single selection)
+- **isInvalid**: Data verification status (true: Changes the component's border color to red | false: Maintains the component's border color respecting the applied style)
+- **isLocked**: Shows the value and blocks the component, preventing it from changing its value (true: enable | false: disable)
+- **isDisabled**: Changes the value to empty ("") and blocks the component, not allowing it to change its value (true: enable | false: disable)
+- **isClearable**: Allows you to delete the content of the component in value by clicking on the X icon (true: enable | false: disable)
+- **options**: Items that are shown by the component, must be an object as follows: ```{ id: '', value: '', label: '', image: '', base: '', quote: '' }```
+               - **id**: Value identifier (Required)
+               - **value**: Value of the item (Required)
+               - **label**: Text shown by the component. If the base AND quote is entered, the base/quote will be shown as text, otherwise only the label (Required)
+               - **image**: Icon that will be shown next to the text (Optional)
+               - **base**: Base currency (Optional)
+               - **quote**: Quote currency (Optional)
+- **placeholder**: Component title
+- **noOptionsMessage**: Message shown when there is no search result
+- **onChange**: Function that returns every time the component's value is changed (Returns the complete object chosen in options)
+- **onFormikChange**: Function for integration with the Formik component, triggered every time the component's value changes
+- **onFormikBlur**: Function for integration with the Formik component, triggered every time the component loses focus
+
+<Canvas of={SelectStories.select} />
