@@ -22,7 +22,10 @@
     "select",
     "react",
     "react-component",
-    "form"
+    "form",
+    "formik",
+    "cryptocurrencies",
+    "crypto"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
