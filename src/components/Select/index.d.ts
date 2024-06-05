@@ -9,7 +9,7 @@ declare module "bymax-react-select" {
   }
 
   interface CSSObject {
-    [key: string]: string | number | CSSObject | (() => CSSObject) | undefined;
+    [key: string]: string | number | CSSObject | undefined;
   }
   
   interface SelectProps {
@@ -23,7 +23,7 @@ declare module "bymax-react-select" {
     options: Option[];
     placeholder?: string;
     noOptionsMessage: string;
-    styles?: {[key: string]: CSSObject | undefined};
+    styles?: {[key: string]: CSSObject | (() => CSSObject) | undefined};
     onChange: (value: Option | Option[] | null) => void;
     onFormikChange?: (id: string, value: Option | Option[] | null) => void;
     onFormikBlur?: (id: string, touched?: boolean, shouldValidate?: boolean) => void;
