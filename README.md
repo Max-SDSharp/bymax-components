@@ -144,6 +144,7 @@ export default function App() {
                - **quote**: Quote currency (Optional)
 - **placeholder**: Component title
 - **noOptionsMessage**: Message shown when there is no search result
+- **styles**: Define custom CSS styles
 - **onChange**: Function that returns every time the component's value is changed (Returns the complete object chosen in options)
 - **onFormikChange**: Function for integration with the Formik component, triggered every time the component's value changes
 - **onFormikBlur**: Function for integration with the Formik component, triggered every time the component loses focus

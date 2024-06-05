@@ -1,6 +1,6 @@
 {
   "name": "bymax-react-select",
-  "version": "1.0.11",
+  "version": "2.0.0",
   "description": "A flexible and beautiful selection component for ReactJS, featuring support for multi-select, single-select, and search.",
   "author": "Maximiliano Salvatti",
   "license": "MIT",
