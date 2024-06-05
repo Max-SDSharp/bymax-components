@@ -9,8 +9,9 @@ declare module "bymax-react-select" {
   }
 
   interface CSSObject {
-    [key: string]: string | number | CSSObject | undefined;
+    [key: string]: string | number | CSSObject | (() => CSSObject) | undefined;
   }
+  
   interface SelectProps {
     id: string;
     value: Option | Option[] | null;
