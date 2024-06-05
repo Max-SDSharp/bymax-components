@@ -27,6 +27,7 @@ import {
  *              quote: Quote currency (Optional)
  * - placeholder -> Component title
  * - noOptionsMessage -> Message shown when there is no search result
+ * - styles -> Define custom CSS styles
  * - onChange -> Function that returns every time the component's value is changed (Returns the complete object chosen in options)
  * - onFormikChange -> Function for integration with the Formik component, triggered every time the component's value changes
  * - onFormikBlur -> Function for integration with the Formik component, triggered every time the component loses focus
@@ -174,10 +175,30 @@ export const Select = (props) => {
     }
   }, [props.value, propsRef.current.onChange, props.id]);
 
+  const mergeStyles = (defaultStyles, customStyles) => {
+    const combinedStyles = { ...defaultStyles }
+
+    for (const key in customStyles) {
+      if (defaultStyles[key]) {
+        combinedStyles[key] = (provided, state) => {
+          const defaultStyle = defaultStyles[key](provided, state)
+          const customStyle = customStyles[key](provided, state)
+          return { ...defaultStyle, ...customStyle }
+        }
+      } else {
+        combinedStyles[key] = customStyles[key]
+      }
+    }
+
+    return combinedStyles
+  }
+
+  const combinedStyles = mergeStyles(customStyles, props.styles)
+
   return (
     <ReactSelect
       id={props.id}
-      styles={customStyles}
+      styles={combinedStyles}
       className="react-select-container"
       classNamePrefix="react-select"
       options={isMaxVal ? actualOptions : options}

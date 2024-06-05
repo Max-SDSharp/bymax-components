@@ -29,8 +29,19 @@ const customStyles = {
     multiValue: (provided) => ({
         ...provided,
         fontSize: provided,
-        color: provided
-    }),
+        color: provided,
+        height: '28px',
+        width: 'auto',
+      }),
+      multiValueLabel: (provided) => ({
+        ...provided,
+        display: 'flex',
+        alignItems: 'center',
+      }),
+      multiValueRemove: (provided) => ({
+        ...provided,
+        marginLeft: 'auto',
+      }),
     option: (provided) => ({
         ...provided,
         display: 'flex',
