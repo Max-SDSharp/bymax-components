@@ -27,6 +27,8 @@ import {
  *              quote: Quote currency (Optional)
  * - placeholder -> Component title
  * - noOptionsMessage -> Message shown when there is no search result
+ * - isLoading -> Controls the display of the loading indicator
+ * - loadingMessage -> Message shown during loading
  * - styles -> Define custom CSS styles
  * - onChange -> Function that returns every time the component's value is changed (Returns the complete object chosen in options)
  * - onFormikChange -> Function for integration with the Formik component, triggered every time the component's value changes
@@ -217,6 +219,8 @@ export const Select = (props) => {
           : maxValues
       }
       noOptionsMessage={() => props.noOptionsMessage}
+      isLoading={props.isLoading}
+      loadingMessage={() => props.loadingMessage}
       filterOption={createFilter({ ignoreAccents: false })}
       components={{
         ValueContainer: CustomValueContainer,
