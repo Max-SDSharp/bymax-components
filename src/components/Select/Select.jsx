@@ -107,6 +107,10 @@ export const Select = (props) => {
         } else {
           setValuesMulti(els);
         }
+
+        if (e.length === 0) {
+          setValuesMulti(e)
+        }
       }
     } else if (e) {
       setValues(e);
