@@ -1,4 +1,4 @@
-import{j as n,a as t,F as l,S as s,s as a}from"./Select.stories-ee01fb73.js";import{M as c,C as h}from"./index-8947cd14.js";import{u as r}from"./index-a1cf9e47.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./isNativeReflectConstruct-a221c5d1.js";import"./index-d3ea75b5.js";import"./iframe-2793fd08.js";import"../sb-preview/runtime.js";import"./index-11d98b33.js";import"./index-8fd8397b.js";import"./index-356e4a49.js";function o(i){const e=Object.assign({h1:"h1",p:"p",a:"a",h2:"h2",ul:"ul",li:"li",strong:"strong",code:"code"},r(),i.components);return t(l,{children:[n(c,{of:s}),`
+import{j as n,a as t,F as l,S as s,s as c}from"./Select.stories-c4e89a83.js";import{M as a,C as h}from"./index-bbacd356.js";import{u as r}from"./index-a1cf9e47.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./isNativeReflectConstruct-a221c5d1.js";import"./index-d3ea75b5.js";import"./iframe-37fd2530.js";import"../sb-preview/runtime.js";import"./index-11d98b33.js";import"./index-8fd8397b.js";import"./index-356e4a49.js";function i(o){const e=Object.assign({h1:"h1",p:"p",a:"a",h2:"h2",ul:"ul",li:"li",strong:"strong",code:"code"},r(),o.components);return t(l,{children:[n(a,{of:s}),`
 `,n(e.h1,{id:"select",children:"Select"}),`
 `,t(e.p,{children:[n("b",{children:"bymax React Select"})," is a component created using the ",n(e.a,{href:"https://react-select.com",target:"_blank",rel:"nofollow noopener noreferrer",children:"react-select"}),` component, a flexible and beautiful select input control for ReactJS
 with multiselect, singleselect and search system.`]}),`
@@ -25,6 +25,8 @@ in integration with the `,n(e.a,{href:"https://formik.org/",target:"_blank",rel:
 `]}),`
 `]}),`
 `,t(e.li,{children:[n(e.strong,{children:"placeholder"}),": Component title"]}),`
+`,t(e.li,{children:[n(e.strong,{children:"placeholderSearch"}),": Search input placeholder text when search is enabled"]}),`
+`,t(e.li,{children:[n(e.strong,{children:"moveSelectedToTop"}),": Moves selected option to top of dropdown options list when true."]}),`
 `,t(e.li,{children:[n(e.strong,{children:"noOptionsMessage"}),": Message shown when there is no search result"]}),`
 `,t(e.li,{children:[n(e.strong,{children:"isLoading"}),": Controls the display of the loading indicator"]}),`
 `,t(e.li,{children:[n(e.strong,{children:"loadingMessage"}),": Message shown during loading"]}),`
@@ -33,4 +35,4 @@ in integration with the `,n(e.a,{href:"https://formik.org/",target:"_blank",rel:
 `,t(e.li,{children:[n(e.strong,{children:"onFormikChange"}),": Function for integration with the Formik component, triggered every time the component's value changes"]}),`
 `,t(e.li,{children:[n(e.strong,{children:"onFormikBlur"}),": Function for integration with the Formik component, triggered every time the component loses focus"]}),`
 `]}),`
-`,n(h,{of:a})]})}function M(i={}){const{wrapper:e}=Object.assign({},r(),i.components);return e?n(e,Object.assign({},i,{children:n(o,i)})):o(i)}export{M as default};
+`,n(h,{of:c})]})}function k(o={}){const{wrapper:e}=Object.assign({},r(),o.components);return e?n(e,Object.assign({},o,{children:n(i,o)})):i(o)}export{k as default};

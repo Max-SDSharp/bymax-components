@@ -68,6 +68,7 @@ export default function App() {
       isClearable={true}
       options={options}
       placeholder="Select a coin"
+      placeholderSearch="Type to Search"
       noOptionsMessage="No coins found"
       onChange={(selectedOption) =>
         setValue(selectedOption)
@@ -117,6 +118,7 @@ export default function App() {
       isClearable={true}
       options={options}
       placeholder="Select a coin"
+      placeholderSearch="Type to Search"
       noOptionsMessage="No coins found"
       onChange={(selectedOption) =>
         setValue(selectedOption)
@@ -143,6 +145,8 @@ export default function App() {
                - **base**: Base currency (Optional)
                - **quote**: Quote currency (Optional)
 - **placeholder**: Component title
+- **placeholderSearch**: Search input placeholder text when search is enabled
+- **moveSelectedToTop**: Moves selected option to top of dropdown options list when true.
 - **noOptionsMessage**: Message shown when there is no search result
 - **isLoading**: Controls the display of the loading indicator
 - **loadingMessage**: Message shown during loading

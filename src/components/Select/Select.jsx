@@ -26,6 +26,8 @@ import {
  *              base: Base currency (Optional)
  *              quote: Quote currency (Optional)
  * - placeholder -> Component title
+ * - placeholderSearch -> Search input placeholder text when search is enabled
+ * - moveSelectedToTop -> Moves selected option to top of dropdown options list when true.
  * - noOptionsMessage -> Message shown when there is no search result
  * - isLoading -> Controls the display of the loading indicator
  * - loadingMessage -> Message shown during loading
@@ -43,16 +45,56 @@ export const Select = (props) => {
   const [valuesMulti, setValuesMulti] = useState();
   const [maxValues, setMaxValues] = useState({});
   const [isMaxVal, setIsMaxVal] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const moveSelectedToTop = props.moveSelectedToTop || false;
 
   const propsRef = useRef(props);
 
   const [options, setOptions] = useState();
   const [actualOptions, setActualOptions] = useState();
 
+  // Function to order options alphabetically and put selected option on top
+  const orderOptions = (currentOptions, selectedOption) => {
+    if (!selectedOption || !currentOptions || currentOptions.length === 0) {
+      return currentOptions;
+    }
+    
+    const selectedValue = selectedOption.value;
+    
+    // Find the full option object that matches the selected value
+    const selectedOptionObj = currentOptions.find(opt => opt.value === selectedValue);
+    
+    if (!selectedOptionObj) {
+      return currentOptions;
+    }
+    
+    // Filter out the selected option
+    const filteredOptions = currentOptions.filter(opt => opt.value !== selectedValue);
+    
+    // Sort the remaining options alphabetically by label
+    const sortedOptions = [...filteredOptions].sort((a, b) => {
+      if (a.label < b.label) return -1;
+      if (a.label > b.label) return 1;
+      return 0;
+    });
+    
+    // Put the selected option at the top
+    return [selectedOptionObj, ...sortedOptions];
+  };
+
   const handleBlur = () => {
+    setMenuIsOpen(false);
     if (propsRef.current.onFormikBlur)
       propsRef.current.onFormikBlur(props.id, true, false);
   };
+  
+  const handleMenuOpen = () => {
+    setMenuIsOpen(true);
+  }
+
+  const handleMenuClose = () => {
+    setMenuIsOpen(false);
+  }
 
   const handleChange = (e) => {
     let els = [];
@@ -125,7 +167,32 @@ export const Select = (props) => {
       if (propsRef.current.onFormikChange)
         propsRef.current.onFormikChange(props.id, []);
     }
+
+    // Move selected option to the first position if moveSelectedToTop is true
+    if (e && options && !props.isMulti && moveSelectedToTop) {
+      const selectedOption = Array.isArray(e) ? e[e.length - 1] : e;
+
+      if (!options[0] || options[0].value !== selectedOption.value){
+        const newOptions = orderOptions(options, selectedOption);
+        setOptions(newOptions);
+        setActualOptions(newOptions);
+      }
+    }
   };
+
+  // Effect for ordering options when component initializes with a value
+  useEffect(() => {
+    if (props.value && options && !props.isMulti && moveSelectedToTop) {
+      const selectedOption = Array.isArray(props.value) ? props.value[0] : props.value;
+      
+      const selectedOptionObj = options.find(opt => opt.value === selectedOption.value);
+      if (selectedOptionObj && (!options[0] || options[0].value !== selectedOption.value)) {
+        const newOptions = orderOptions(options, selectedOption);
+        setOptions(newOptions);
+        setActualOptions(newOptions);
+      }
+    }
+  }, [props.value, options, moveSelectedToTop, props.isMulti]);
 
   useEffect(() => {
     setValues([]);
@@ -222,6 +289,7 @@ export const Select = (props) => {
           ? values
           : maxValues
       }
+      controlShouldRenderValue={!menuIsOpen || props.isMulti}
       noOptionsMessage={() => props.noOptionsMessage}
       isLoading={props.isLoading}
       loadingMessage={() => props.loadingMessage}
@@ -232,7 +300,9 @@ export const Select = (props) => {
         MultiValue: IconMultiValue,
         Option: IconOption,
       }}
-      placeholder={props.placeholder}
+      placeholder={menuIsOpen ? (props.placeholderSearch || props.placeholder) : props.placeholder}
+      onMenuOpen={handleMenuOpen}
+      onMenuClose={handleMenuClose}
     />
   );
 };

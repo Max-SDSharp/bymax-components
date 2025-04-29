@@ -22,6 +22,8 @@ declare module "bymax-react-select" {
     isClearable?: boolean;
     options: Option[];
     placeholder?: string;
+    placeholderSearch?: string;
+    moveSelectedToTop?: boolean;
     noOptionsMessage: string;
     isLoading?: boolean;
     loadingMessage?: string;

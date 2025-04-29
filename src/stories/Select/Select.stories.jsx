@@ -17,6 +17,7 @@ export default {
     isDisabled: false,
     isClearable: true,
     placeholder: "Select a coin",
+    placeholderSearch: "Search for a coin",
     noOptionsMessage: "No coins found",
   },
 };
@@ -55,6 +56,7 @@ export const select = (args) => (
         },
       ]}
       placeholder={args.placeholder}
+      placeholderSearch={args.placeholderSearch}
       noOptionsMessage={args.noOptionsMessage}
       onChange={(selectedOption) =>
         console.log("Selected Option:", selectedOption)
