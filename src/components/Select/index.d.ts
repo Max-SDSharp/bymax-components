@@ -27,6 +27,7 @@ declare module "bymax-react-select" {
     noOptionsMessage: string;
     isLoading?: boolean;
     loadingMessage?: string;
+    menuPortalTarget?: HTMLElement;
     styles?: {[key: string]: CSSObject | (() => CSSObject) | undefined};
     onChange: (value: Option | Option[] | null) => void;
     onFormikChange?: (id: string, value: Option | Option[] | null) => void;

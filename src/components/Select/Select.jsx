@@ -31,6 +31,7 @@ import {
  * - noOptionsMessage -> Message shown when there is no search result
  * - isLoading -> Controls the display of the loading indicator
  * - loadingMessage -> Message shown during loading
+ * - menuPortalTarget -> HTMLElement where the menu will be rendered
  * - styles -> Define custom CSS styles
  * - onChange -> Function that returns every time the component's value is changed (Returns the complete object chosen in options)
  * - onFormikChange -> Function for integration with the Formik component, triggered every time the component's value changes
@@ -303,6 +304,9 @@ export const Select = (props) => {
       placeholder={menuIsOpen ? (props.placeholderSearch || props.placeholder) : props.placeholder}
       onMenuOpen={handleMenuOpen}
       onMenuClose={handleMenuClose}
+      menuPortalTarget={props.menuPortalTarget ?? undefined}
+      menuPosition={props.menuPortalTarget ? "fixed" : undefined}
+      menuPlacement={props.menuPortalTarget ? "auto" : undefined}
     />
   );
 };

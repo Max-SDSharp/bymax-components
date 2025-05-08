@@ -66,7 +66,12 @@ const customStyles = {
     }),
     menu: (provided, state) => ({
         ...provided,
-        top: 50
+        marginTop: 0,
+    }),
+    menuPortal: (provided) => ({
+        ...provided,
+        zIndex: 9999,
+        position: 'absolute',
     }),
     valueContainer: (provided, state) => ({
         ...provided,
