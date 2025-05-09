@@ -49,7 +49,9 @@ const customStyles = {
         alignItems: 'center',
         fontSize: provided,
         color: provided,
+        zIndex: 9999,
         cursor: 'pointer',
+        pointerEvents: 'auto',
     }),
     noOptionsMessage: provided => ({
         ...provided,
@@ -67,11 +69,15 @@ const customStyles = {
     menu: (provided, state) => ({
         ...provided,
         marginTop: 0,
+        transform: 'none',
+        zIndex: 9999,
+        pointerEvents: 'auto',        
     }),
     menuPortal: (provided) => ({
         ...provided,
         zIndex: 9999,
-        position: 'absolute',
+        position: 'fixed',
+        pointerEvents: 'auto',
     }),
     valueContainer: (provided, state) => ({
         ...provided,

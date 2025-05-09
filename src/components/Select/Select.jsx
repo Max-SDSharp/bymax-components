@@ -305,8 +305,8 @@ export const Select = (props) => {
       onMenuOpen={handleMenuOpen}
       onMenuClose={handleMenuClose}
       menuPortalTarget={props.menuPortalTarget ?? undefined}
-      menuPosition={props.menuPortalTarget ? "fixed" : undefined}
-      menuPlacement={props.menuPortalTarget ? "auto" : undefined}
+      menuPosition={props.menuPortalTarget ? "absolute" : undefined}
+      menuPlacement={props.menuPortalTarget ? "bottom" : undefined}
     />
   );
 };
